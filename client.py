@@ -1,30 +1,23 @@
 from loguru import logger
 
-from resume_poster import connect
-
-
-class Resume:
-    pass
-
-
-class RabotaDriver:
-    pass
+from browser import BrowserController
+from database import DataBase, Curriculum
 
 
 def main():
-    conn = connect('emails.db')
-    cur = conn.cursor()
-
-    emails = cur.execute('select email from emails where status is NULL').fetchall()
+    db = DataBase('emails.db')
+    emails = db.select('select email from emails where status is NULL')
     for email in emails:
-        print(email)
-        posted = True
-        if posted:
-            print('posted')
+        browser = BrowserController(Curriculum())
+        if browser.first_step(email[0]):
+            if browser.second_step():
+                if browser.third_step():
+                    if browser.four_step():
+                        db.update(f'update emails set status = "posted" where email is {email[0]}')
+        else:
+            db.update(f'update emails set status = "ошибка в 1 шаге" where email is "{email[0]}"')
+        browser.driver.close()
 
 
-try:
-    if __name__ == '__main__':
-        main()
-except Exception as error:
-    logger.exception(error)
+if __name__ == '__main__':
+    main()
