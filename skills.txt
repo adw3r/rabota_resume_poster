@@ -1,0 +1,14 @@
+Python3.9
+SQL
+Linux Ubuntu
+Windows 10
+PostgreSQL
+Docker
+Git
+Selenium
+Pandas
+Telethon
+XPATH
+FastAPI
+AsyncIO
+MultiProcessung multithreading
