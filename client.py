@@ -16,7 +16,7 @@ def main():
                         db.update(f'update emails set status = "posted" where email is {email[0]}')
         else:
             db.update(f'update emails set status = "ошибка в 1 шаге" where email is "{email[0]}"')
-        browser.driver.close()
+        browser.driver.quit()
 
 
 if __name__ == '__main__':
