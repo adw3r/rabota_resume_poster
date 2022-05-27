@@ -37,10 +37,6 @@ def main():
                             sixth_step = browser.sixth_step()
                             logger.info(sixth_step)
                             # db.update(f'update emails set status = "posted" where email is {email[0]}')
-        else:
-            logger.debug('error')
-            sleep(60)
-            # db.update(f'update emails set status = "ошибка в 1 шаге" where email is "{email[0]}"')
         browser.driver.quit()
 
 
