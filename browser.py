@@ -3,7 +3,7 @@ from abc import ABC, abstractmethod
 from time import sleep
 
 from loguru import logger
-from selenium.webdriver import Chrome, ActionChains, Keys
+from selenium.webdriver import Chrome, ActionChains, Keys, ChromeOptions
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
@@ -38,10 +38,13 @@ class BrowserController:
     edit_experience_xpath_button = '//div[5]/div[2]/div/div/div[1]/div[2]/span/a'
 
     def __init__(self, resume: Curriculum):
-        self.driver = Chrome()
+        opts = ChromeOptions()
+        # s = '172.67.3.105:08'
+        # opts.add_argument('--proxy-server=http://%s' % s)
+        self.driver = Chrome(options=opts)
         self.resume = resume
 
-    def first_step(self, email: str, sleeping_time: int = 70) -> bool:
+    def first_step(self, email: str, sleeping_time: int = 0) -> bool:
         print('first_step')
         result = False
         self.driver.get(self.starting_page)
@@ -148,7 +151,7 @@ class BrowserController:
             self.driver.find_element(By.XPATH, '//*[@id="branchId"]/option[24]').click()
             sleep(2)
             self.driver.find_element(By.XPATH, '//div[2]/button').click()
-            sleep(2)
+            sleep(5)
             result = True
         except Exception as error:
             logger.exception(error)

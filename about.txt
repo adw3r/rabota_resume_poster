@@ -2,5 +2,5 @@ Python developer
 
 Разработка и поддержка ПО для размещения рекламных объявлений.
 Используемое ПО:
-Pycharm, Multilogin, MS Office package, Windows 10, Linux, OnlineSim, SmsActivate
+Pycharm, Multilogin, MS Office package, Windows 10, Linux, OnlineSim API, SmsActivate API
 Python 3,9, selenium webdriver, pandas, telethon. XPATH, sqlite, Postgresql, docker
