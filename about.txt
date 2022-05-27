@@ -1,9 +1,6 @@
-Python engineer
-Основные задачи:
-Разработка и поддержка ПО для всех подразделений агентства. Тех. консультация коллег.
-Основные задачи:
-Разработка и поддержка ПО для размещения объявлений.
+Python developer
+
+Разработка и поддержка ПО для размещения рекламных объявлений.
 Используемое ПО:
-Pycharm, Multilogin, MS Office package, Windows 10, Linux,
-Python 3,9, selenium webdriver, pandas, telethon. XPATH,
-Из достижений отмечу общее повышение эффективности компании, за счет использования автоматизации.
+Pycharm, Multilogin, MS Office package, Windows 10, Linux, OnlineSim, SmsActivate
+Python 3,9, selenium webdriver, pandas, telethon. XPATH, sqlite, Postgresql, docker

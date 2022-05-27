@@ -35,8 +35,8 @@ class Curriculum:
 
     def __init__(self):
         self.__dict__ = {
-                'firstname': 'Алексей',
-                'lastname': 'Найдюк',
+                'firstname': 'Alexey',
+                'lastname': 'Naidiuk',
                 'email': '',
                 'password': 'Zxcasdqwe123',
                 'phone': '505718633',
