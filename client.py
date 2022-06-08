@@ -14,7 +14,7 @@ class MainController:
         self.email = email
 
     def __call__(self):
-        first_step = self.browser.first_step(self.email, sleeping_time=0)
+        first_step = self.browser.first_step(self.email)
         logger.info(first_step)
         if first_step:
             sleep(2)
@@ -40,6 +40,7 @@ class MainController:
                                 sleep(5)
                                 seven_step = self.browser.seven_step('https://rabota.ua/ua/company10163779/vacancy9168208')
                                 logger.info(seven_step)
+                                sleep(5)
         self.browser.driver.quit()
 
 

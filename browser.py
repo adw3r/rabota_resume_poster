@@ -118,7 +118,7 @@ class BrowserController:
         logger.info('four step')
         result = False
         try:
-            WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.XPATH, self.experience_edit_xpath)))
+            WebDriverWait(self.driver, 30).until(EC.presence_of_element_located((By.XPATH, self.experience_edit_xpath)))
             self.driver.find_element(By.XPATH, self.experience_edit_xpath).click()
             frame = self.driver.find_element(By.TAG_NAME, "iframe")
             self.driver.switch_to.frame(frame)
