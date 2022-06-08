@@ -1,7 +1,8 @@
+Резюме размещено автоматически с использование python3, selenium, linux ubuntu server, docker.
+
 LinkedIn: https://www.linkedin.com/in/alexeynaidiuk/
 Telegram: https://t.me/alexey_naidiuk
 GitHub: https://github.com/alexeyNaidiuk, https://github.com/daniltrash
-
 Python3.9
 SQL
 Linux Ubuntu

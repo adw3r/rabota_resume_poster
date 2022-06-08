@@ -16,7 +16,7 @@ class DataBase:
         self.con.commit()
 
 
-class Curriculum:
+class Curriculum:  # todo get data from mongodb
     firstname: str
     lastname: str
     email: str
@@ -44,7 +44,7 @@ class Curriculum:
                 'b_day': '1',
                 'b_month': 'декабрь',
                 'b_year': '1999',
-                'wanted_job': 'python developer',
+                'wanted_job': 'Automation engineer',
                 'previous_company': 'Conslux',
                 'experience': 'февраль',
                 'experience_year': '2021',

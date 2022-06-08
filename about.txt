@@ -1,6 +1,9 @@
-Python developer
+Основные обязанности: 
+Разработка и поддержка скриптов для размещения рекламных объявлений, фарм аккаунтов, парсинг сайтов.
 
-Разработка и поддержка ПО для размещения рекламных объявлений.
 Используемое ПО:
-Pycharm, Multilogin, MS Office package, Windows 10, Linux, OnlineSim API, SmsActivate API
-Python 3,9, selenium webdriver, pandas, telethon. XPATH, sqlite, Postgresql, docker
+Python3, SQL, Postgresql, Selenium webdriver, Git, Docker, Pycharm, Multilogin, Postman, MS Excel, Linux Ubuntu server, Windows 10,
+Rucaptcha API, OnlineSim API, SmsActivate API, proxy
+
+Используемые библиотеки:
+pandas, requests, selenium, telethon, psycopg2, instapy, instagrapi.

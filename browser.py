@@ -39,13 +39,12 @@ class BrowserController:
 
     def __init__(self, resume: Curriculum):
         opts = ChromeOptions()
-        # s = '172.67.3.105:08'
         # opts.add_argument('--proxy-server=http://%s' % s)
         self.driver = Chrome(options=opts)
         self.resume = resume
 
-    def first_step(self, email: str, sleeping_time: int = 0) -> bool:
-        print('first_step')
+    def first_step(self, email: str) -> bool:
+        logger.info('first_step')
         result = False
         self.driver.get(self.starting_page)
         try:
@@ -54,9 +53,6 @@ class BrowserController:
             self.driver.find_element(By.XPATH, self.mail_xpath).send_keys(email)
             self.driver.find_element(By.XPATH, self.password_xpath).send_keys(self.resume.password)
             self.driver.find_element(By.XPATH, self.submit_button_xpath).click()
-            for _ in range(sleeping_time):
-                time.sleep(1)
-                print(_)
             assert 'Этот email уже зарегистрирован.' not in self.driver.page_source
             result = True
         except Exception as error:
@@ -65,7 +61,7 @@ class BrowserController:
             return result
             
     def second_step(self) -> bool:
-        print('second step')
+        logger.info('second step')
         result = False
         try:
             WebDriverWait(self.driver, 10).until(EC.title_contains('Разместить '))
@@ -85,7 +81,7 @@ class BrowserController:
             return result
         
     def third_step(self) -> bool:
-        print('third_step')
+        logger.info('third_step')
         result = False
         try:
             field = WebDriverWait(self.driver, 10).until(
@@ -101,7 +97,7 @@ class BrowserController:
             return result
 
     def four_step(self) -> bool:
-        print('third_step')
+        logger.info('third_step')
         result = False
         try:
             WebDriverWait(self.driver, 5).until(
@@ -119,7 +115,7 @@ class BrowserController:
             return result
 
     def five_step(self) -> bool:
-        print('four step')
+        logger.info('four step')
         result = False
         try:
             WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.XPATH, self.experience_edit_xpath)))
@@ -152,6 +148,21 @@ class BrowserController:
             sleep(2)
             self.driver.find_element(By.XPATH, '//div[2]/button').click()
             sleep(5)
+            result = True
+        except Exception as error:
+            logger.exception(error)
+        finally:
+            return result
+
+    def seven_step(self, url: str):
+        logger.info('sending cv')
+        result = False
+        self.driver.get(url)
+        try:
+            el = WebDriverWait(self.driver, 10).until(
+                EC.presence_of_element_located((By.XPATH, '//santa-button-spinner/div/santa-button/button'))
+            )
+            el.click()
             result = True
         except Exception as error:
             logger.exception(error)

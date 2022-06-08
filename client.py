@@ -36,18 +36,18 @@ class MainController:
                             sleep(5)
                             sixth_step = self.browser.sixth_step()
                             logger.info(sixth_step)
-                            # db.update(f'update emails set status = "posted" where email is {email[0]}')
+                            if sixth_step:
+                                sleep(5)
+                                seven_step = self.browser.seven_step('https://rabota.ua/ua/company10163779/vacancy9168208')
+                                logger.info(seven_step)
         self.browser.driver.quit()
 
 
 def main():
-    # db = DataBase('emails.db')
-    # emails = db.select('select email from emails where status is NULL')
     while True:
         for _ in range(5):
             browser = BrowserController(Curriculum())
             email = ''.join([choice(ascii_lowercase) for _ in range(10)])
-
             controller = MainController(browser, f'{email}@vddaz.com')
             controller()
         sleep(60 * 30)
